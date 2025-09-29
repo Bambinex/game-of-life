@@ -6,7 +6,7 @@ def display_grid(grid: set,
     
     for i in range(screen.get_width() // 20):
         for j in range(screen.get_height() // 20):
-            if (coords[0] + i, coords[1] + j) in grid:
+            if tuple((coords[0] + i, coords[1] + j)) in grid:
                 pygame.draw.rect(screen, 
                                  "white", 
                                  pygame.Rect((coords[0] + i)*20, (coords[1] + j)*20, 20, 20))
