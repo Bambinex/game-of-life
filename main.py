@@ -1,4 +1,5 @@
 import pygame
+from src.rules import update
 from src.display import display_grid
 
 def main():
@@ -7,7 +8,7 @@ def main():
     clock = pygame.time.Clock()
     running = True
 
-    grid : set = {(0,0)}
+    grid : set = {(5,5), (5,6), (5,7)}
     coordinates : list = [0,0]
 
     while running:
@@ -16,8 +17,9 @@ def main():
                 running = False
 
         display_grid(grid, screen, coordinates)
+        grid = update(grid)
 
-        clock.tick(60)
+        clock.tick(5)
 
     pygame.quit()
 
